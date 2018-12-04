@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'loggin' => 'loggins#new'
+  post 'loggin' => 'loggins#create'
+
   root 'welcome#index'
   
   resources :systems
