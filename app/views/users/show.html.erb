@@ -15,5 +15,7 @@
   <%= @user.email %>
 </p>
 
+
+<%= link_to 'logout',logout_path ,method: :get %>|
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back',  root_path%><!--users_path %>-->

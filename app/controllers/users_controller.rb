@@ -21,6 +21,14 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def logout
+    cookies.delete :user
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'User was successfully logouted.' }
+      format.json { head :no_content }
+    end
+  end
+
   # POST /users
   # POST /users.json
   def create
@@ -62,6 +70,8 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
