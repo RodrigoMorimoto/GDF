@@ -1,0 +1,60 @@
+
+<!--CRIAR A LÓGICA DE EDITAR E APAGAR FICHA-->
+<% if @current_user.nil?%>
+    Apenas usuários cadastrados podem editar fichas
+    <br>
+    <br>
+<%else %>
+Apenas o proprietário da ficha pode editá-la
+<br>
+<br>
+  <% if @current_user.id == @esta_ficha.usuario%>
+      <%= link_to "Apagar ficha", fichas_apagar_path(:sistema => 1, :id => @esta_ficha.id) %>
+      <br>
+      <br>
+      <%= link_to "Editar ficha", fichas_editar_path(:sistema => 1, :id => @esta_ficha.id) %>
+      <br>
+      <br>
+  <%end %>
+<%end %>
+
+
+
+
+<div class="">
+    Nome: <%= @esta_ficha.name %>
+</div>
+<br>
+<div class="">
+    Nível: <%= @esta_ficha.level %>
+</div>
+<br>
+<div class="">
+    Classe: <%= @esta_ficha.classe %>
+</div>
+<br>
+<div class="">
+    Race: <%= @esta_ficha.race %>
+</div>
+<br>
+<div class="">
+    HP: <%= @esta_ficha.hp %>
+</div>
+<br>
+<div class="">
+    AC: <%= @esta_ficha.ac %>
+</div>
+<br>
+<div class="">
+    Sistema: <% if @esta_ficha.sistema==2 %>
+                <%= 'D&D 5e' %>
+             <% else %>
+                <%= 'UESRPG' %>
+             <% end %>
+</div>
+<br>
+<div class="">
+    Proprietário: <%= @users.find(@esta_ficha.usuario).name %>
+</div>
+<br>
+<%= link_to "Voltar", selecao_path(:sistema => 1) %>

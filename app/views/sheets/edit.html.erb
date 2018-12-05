@@ -1,0 +1,19 @@
+<h1>Edite sua ficha!</h1>
+<%= form_tag(fichas_update_path ,:method => :post) do %>
+
+    <div class="">
+        Nome: <%= text_field_tag 'name', nil, size: 50, placeholder: @a.name %>
+    </div>
+    <br>
+
+    <div class="">
+        Nível: <%= number_field_tag 'level', nil, size: 10, placeholder: @a.level %>
+    </div>
+    <br>
+    <div class="">
+        Classe: <%= text_field_tag 'classe', nil, size: 30, placeholder: @a.classe %>
+    </div>
+
+
+    <%= submit_tag "Atualizar Ficha" %>
+<% end %>

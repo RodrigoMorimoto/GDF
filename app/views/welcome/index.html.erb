@@ -1,17 +1,20 @@
 <h1>Gerenciador de Fichas de RPG</h1>
 
 <% if @user.nil?%>
-    <h3><%= link_to 'Visualizar Fichas', systems_path %></h3>
+    <h3><%= link_to 'Visualizar Fichas', selecao_path %></h3>
 
     <h3><%= link_to 'Login', loggin_path %></h3>
 
     <h3><%= link_to "Faça já o seu cadastro!", new_user_path %></h3>
 
+    <%= hidden_field_tag 'sistema', 1 %>
+    <!--campo oculto usado pra inicializar tabela de fichas na opção todos-->
+
 <% else %>
 
     <h3><%= "Olá #{@user[:name]}" %></h3>
     <h3><%= link_to 'Sua página de perfil', @user %></h3>
-    <h3><%= link_to 'Visualizar Fichas', systems_path %></h3>
+    <h3><%= link_to 'Visualizar Fichas', selecao_path %></h3>
 
+    <%= link_to 'logout',logout_path ,method: :get %>
 <%end %>
-

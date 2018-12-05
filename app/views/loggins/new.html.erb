@@ -11,7 +11,10 @@
         <%= form.password_field :password, autocomplete: "off" %>
     </div>
     <div class="actions">
-    
+
+      <%= hidden_field 'sistema', 1 %>
+      <!--campo oculto usado pra inicializar tabela de fichas na opção todos-->
+
     <%= form.submit "Log in" %>
   </div>
 <p>New user? <%= link_to "Sign up now!", new_user_path %></p>

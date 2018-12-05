@@ -1,0 +1,34 @@
+<h1>Crie sua própria ficha!</h1>
+<%= form_tag(selecao_criar_path ,:method => :post) do %>
+
+    <div class="">
+        Nome: <%= text_field_tag 'name', nil, size: 50, placeholder: 'Digite o nome aqui...' %>
+    </div>
+    <br>
+    <div class="">
+        sistema: <%= select_tag :sistema, options_for_select([["D&D 5e", 2],["UESRPG", 3]]) %>
+    </div>
+    <br>
+
+    <div class="">
+        Nível: <%= number_field_tag 'level', nil, size: 10 %>
+    </div>
+    <br>
+    <div class="">
+        Classe: <%= text_field_tag 'classe', nil, size: 30, placeholder: 'Classe' %>
+    </div>
+    <br>
+    <div class="">
+        Raça: <%= text_field_tag 'race', nil, size: 30, placeholder: 'Raça' %>
+    </div>
+    <br>
+    <div class="">
+        HP: <%= number_field_tag 'hp', nil, size: 10  %>
+    </div>
+    <br>
+    <div class="">
+        AC: <%= number_field_tag 'ac', nil, size: 10 %>
+    </div>
+
+    <%= submit_tag "Criar Ficha" %>
+<% end %>

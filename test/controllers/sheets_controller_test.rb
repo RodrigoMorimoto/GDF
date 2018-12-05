@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SystemTest < ActiveSupport::TestCase
+class SheetsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
