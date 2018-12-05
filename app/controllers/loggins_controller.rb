@@ -9,7 +9,7 @@ class LogginsController < ApplicationController
                                   #sign_in(@mestre)
                           cookies[:user] = @user[:id]
                           #redirect_to root_path
-                          redirect_to @user
+                          redirect_to root_path
                   else
                           redirect_to loggin_path
                   end
